@@ -105,11 +105,12 @@ table.onclick = function(event) {
     // empty box
     let text = document.createTextNode(turn);
     td.appendChild(text);
+    let newId = "turn" + turn.toLowerCase();
+    td.setAttribute("id", newId);
     moves++;
     board[row][col] = turn;
+
     let winner = getWinner(row, col, turn);
-    console.log(board);
-    console.log(winner);
     if (winner === 0) {
       if (moves < size * size) {
         switchTurn();

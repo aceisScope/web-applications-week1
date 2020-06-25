@@ -16,3 +16,13 @@ td {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 30px;
 }
+
+.td,
+#turnx {
+  background-color: rgba(124, 252, 0, 1);
+}
+
+.td,
+#turno {
+  background-color: rgba(250, 128, 114, 1);
+}
