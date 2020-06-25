@@ -9,10 +9,10 @@ td {
   border-collapse: collapse;
 }
 
-table {
-  width: 50%;
-}
-
 td {
-  height: 50px;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
 }
