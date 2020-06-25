@@ -93,8 +93,9 @@ function getWinner(row, col, turn) {
   return 0;
 }
 
-let table = document.querySelector("table");
+let table = document.createElement("table");
 generateTable(table, board);
+document.getElementById("board").appendChild(table);
 table.onclick = function(event) {
   let td = event.target;
   let row = td.parentNode.rowIndex;
