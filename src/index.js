@@ -31,6 +31,7 @@ function switchTurn() {
   } else {
     turn = "X";
   }
+  resetTimer();
 }
 
 // return playter 1 or 2 if there's a winnder, otherwise return 0
@@ -123,18 +124,24 @@ table.onclick = function(event) {
   }
 };
 
-move();
+var id = setInterval(frame, 1000);
+var bar = document.getElementById("myBar");
+var width = 0;
 
-function move() {
-  var elem = document.getElementById("myBar");
-  var width = 1;
-  var id = setInterval(frame, 1000);
-  function frame() {
-    if (width >= 100) {
-      clearInterval(id);
-    } else {
-      width++;
-      elem.style.width = width + "%";
-    }
+function frame() {
+  if (width >= 100) {
+    switchTurn();
+  } else {
+    width += 10;
+    bar.style.width = width + "%";
+    document.getElementById("seconds").innerHTML = width / 10;
   }
+}
+
+function resetTimer() {
+  clearInterval(id);
+  width = 0;
+  bar.style.width = "0%";
+  document.getElementById("seconds").innerHTML = 0;
+  id = setInterval(frame, 1000);
 }

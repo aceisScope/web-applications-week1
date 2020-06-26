@@ -26,3 +26,12 @@ td {
 #turno {
   background-color: rgba(250, 128, 114, 1);
 }
+
+.progressBar {
+  width: 300px;
+}
+
+#myBar {
+  height: 24px;
+  width: 0%;
+}
